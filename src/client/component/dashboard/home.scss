@@ -1,0 +1,126 @@
+.contentBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.scrumTableContainer{
+    width: auto;
+    min-height: 200px;
+    display: grid;
+    grid-gap: 1rem;
+    min-height: 200px;
+    grid-template-columns: 10.4rem 1fr 10.4rem;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "left top right"
+        "left table right"
+        "left bottom right";
+    .tableElem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .center-top-table{
+        grid-area: top;
+        align-items: stretch;
+    }
+    .left-side-table {
+        grid-area: left;
+    }
+    .right-side-table {
+        grid-area: right;
+    }
+    .scrumTable{
+        width: 25rem;
+        height: 140px;
+        display: flex;
+        background-color: var(--primary-white);
+        border-radius: 100px;
+        border:10px solid var(--primary-light-grey);
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        p{
+            color: var(--primary-walmart-blue);
+        }
+    }
+    .lonelyQuote{
+        text-align: center;
+        color: var(--primary-white);
+        p,h5{
+            margin: 5px 0;
+        }
+        h5{
+            cursor: pointer;
+            color: var(--primary-walmart-yellow);
+        }
+    }
+}
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    .cardElement{
+        width: 2.5rem;
+        height: 70px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-mild-grey);
+        color: var(--primary-walmart-blue);
+        cursor: pointer;
+        transition: .1s linear all;   
+        overflow: hidden;
+        &.selected {
+            background-image: url('../../assets/images/card-pattern.jpg');
+            background-size: cover;
+            position: relative;
+            &::before{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(255, 194, 32, .81);
+            }
+        }
+    }
+    .cardName{
+        margin-top: 10px;
+        color: var(--primary-light-grey);
+    }
+}
+.cardPointersContainer{
+    width: 80%;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 2rem;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--primary-light-grey);
+    .cardRows {
+        gap:1rem;
+        display: flex;
+        .cardElement{
+            width: 2.6rem;
+            height: 80px;
+            background-color: var(--primary-walmart-blue);
+            color: var(--primary-light-grey);
+            border: 1px solid var(--primary-mild-grey);
+            font-size: 1.2rem;
+            &:hover{
+                margin-top : -15px;
+            }
+        }
+    }
+}
