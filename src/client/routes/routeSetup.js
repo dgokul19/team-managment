@@ -1,5 +1,6 @@
 
 import DashboardComponent from '../component/dashboard/DashboardComponent';
+import CreateRoomComponent from '../component/gameRoom/CreateRoomModal';
 
 export const routesList = [
     {
@@ -12,5 +13,16 @@ export const routesList = [
         },
         redirect: '',
         title: 'Team Managment, Scrum',
+    },
+    {
+        name: 'createRoom',
+        path: '/createRoom',
+        renderComponent: function routeList(routeProps) {
+            return (
+                <CreateRoomComponent />
+            );
+        },
+        redirect: '',
+        title: 'Team Managment Scrum',
     }
 ];
